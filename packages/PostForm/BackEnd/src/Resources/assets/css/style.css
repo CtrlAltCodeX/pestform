@@ -1,0 +1,11 @@
+.shadow-soft { 
+    box-shadow:0 0 24px rgba(27,22,66,.04),0 44px 74px rgba(27,22,66,.06) !important
+}
+
+#header {
+    position:relative;
+}
+
+.form-list {
+    height: 99vh;
+}

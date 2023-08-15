@@ -80,6 +80,8 @@
                 this.formData.emails = "";
                 this.formData.url = "";
 
+                // window.location.href = '/forms';
+
             }).catch(($e) => {
               toast.error($e);
             });

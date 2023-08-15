@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('emails');
             $table->string('url');
+            $table->string('endpoint');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
 

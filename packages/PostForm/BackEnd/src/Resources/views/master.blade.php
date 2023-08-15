@@ -17,6 +17,8 @@
   <link href="assets/css/style.css" rel="stylesheet">
 
   <link href="front_end/css/style.css" rel="stylesheet">
+  <link href="back_end/css/style.css" rel="stylesheet">
+  @stack('css')
 
 </head>
 
@@ -24,17 +26,14 @@
     <div id='app'>
         @include('front_end::header')
 
-        @include('front_end::components.alert')
-
         @include('back_end::sidebar')
 
         @yield('page-content')
 
         @include('front_end::footer')
-
     </div>
 
-    <script src='back_end/js/app.js'>   
+    <script src='back_end/js/app.js'></script>
     <script src="assets/js/main.js"></script>
 
     @stack('script')

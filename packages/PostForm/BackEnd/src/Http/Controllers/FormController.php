@@ -16,7 +16,9 @@ class FormController extends Controller
      */
     public function index()
     {
-        // return view('front_end::dashboard');
+        $forms = Form::where('user_id', auth()->user()->id)->get();
+
+        return view('back_end::index', compact('forms'));
     }
 
     /**

@@ -17,7 +17,7 @@ class LoginController extends Controller
         if (! auth()->check()) {
             return view('front_end::users.login');
         } else {
-            return redirect()->route('front_end.dashboard.index');
+            return redirect()->route('back_end.index');
         }
     }
 
@@ -29,7 +29,7 @@ class LoginController extends Controller
     public function create()
     {
         if (auth()->attempt(request()->except('_token', 'remember'))) {
-            return redirect()->route('front_end.dashboard.index');
+            return redirect()->route('back_end.index');
         } else {
             return redirect()->back()->with('error', 'Email/Passowrd is Wrong');
         }

@@ -6,11 +6,14 @@ use PostForm\FrontEnd\Http\Controllers\LoginController;
 use PostForm\BackEnd\Http\Controllers\DashboardController;
 
 Route::group(['middleware' => ['auth', 'web']], function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])
-        ->name('front_end.dashboard.index');
+    Route::get('/forms', [FormController::class, 'index'])
+        ->name('back_end.index');
+
+    Route::get('/forms/{id}', [FormController::class, 'edit'])
+        ->name('back_end.edit');
 
     Route::get('/create', [FormController::class, 'show'])
-        ->name('front_end.create.index');
+        ->name('back_end.create');
 
     Route::get('/logout', [LoginController::class, 'logout'])
         ->name('front_end.user.logout');
