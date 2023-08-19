@@ -10,14 +10,14 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="/assets/img/favicon.png" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/css/style.css" rel="stylesheet">
 
-  <link href="front_end/css/style.css" rel="stylesheet">
-  <link href="back_end/css/style.css" rel="stylesheet">
+  <link href="/front_end/css/style.css" rel="stylesheet">
+  <link href="/back_end/css/style.css" rel="stylesheet">
   @stack('css')
 
 </head>
@@ -26,15 +26,17 @@
     <div id='app'>
         @include('front_end::header')
 
-        @include('back_end::sidebar')
-
-        @yield('page-content')
+        <div class="d-flex main-container">
+          @include('back_end::sidebar')
+  
+          @yield('page-content')
+        </div>
 
         @include('front_end::footer')
     </div>
 
-    <script src='back_end/js/app.js'></script>
-    <script src="assets/js/main.js"></script>
+    <script src='/back_end/js/app.js'></script>
+    <script src="/assets/js/main.js"></script>
 
     @stack('script')
     

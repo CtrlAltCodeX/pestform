@@ -14,8 +14,8 @@
   <!-- ======= Create form Section ======= -->
     <section id="contact" class="contact w-100">
       <div class="container">
-        <div class="row mt-5 justify-content-center">
-          <div class="col-lg-8 mt-5 mt-lg-0">
+        <div class="row justify-content-center">
+          <div class="col-lg-10 mt-5 mt-lg-0">
             <form @submit.prevent='createForm(event)' ref='create-form'>
               <div class="php-email-form row gy-2 gx-md-3">
                 <div class="col-md-12 form-group">
@@ -72,7 +72,7 @@
       createForm(event) {
         const data = this.formData;
 
-        axios.post('{{ route("create.form.index") }}', {data}).then(
+        axios.post('{{ route("back_end.form.save") }}', {data}).then(
             (response) => {
                 toast.success(response.data.message);
 

@@ -32,11 +32,13 @@ class RegisterController extends Controller
     public function create()
     {
         request()->validate([
+            'name'    => ['required'],
             'email'    => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
 
         User::create([
+            'name'    => request()->name,
             'email'    => request()->email,
             'password' => Hash::make(request()->password),
         ]);

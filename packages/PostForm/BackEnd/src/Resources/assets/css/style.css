@@ -9,3 +9,20 @@
 .form-list {
     height: 99vh;
 }
+
+.main-container {
+    height: fit-content;
+}
+
+#sidebarMenu {
+    width: 19%;
+}
+
+#page-content {
+    width: 80%;
+}
+
+.endpoint {
+    background-color: #e3e6ec;
+    border-radius: 10px;
+}

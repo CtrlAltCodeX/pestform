@@ -2,7 +2,6 @@
 
 namespace PostForm\FrontEnd\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class LoginController extends Controller
@@ -17,7 +16,7 @@ class LoginController extends Controller
         if (! auth()->check()) {
             return view('front_end::users.login');
         } else {
-            return redirect()->route('back_end.index');
+            return redirect()->route('back_end.form.index');
         }
     }
 
@@ -29,7 +28,7 @@ class LoginController extends Controller
     public function create()
     {
         if (auth()->attempt(request()->except('_token', 'remember'))) {
-            return redirect()->route('back_end.index');
+            return redirect()->route('back_end.form.index');
         } else {
             return redirect()->back()->with('error', 'Email/Passowrd is Wrong');
         }
