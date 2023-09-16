@@ -15,11 +15,11 @@
         </a>
 
         @if (request()->route('id'))
-            <a href="{{ route('back_end.form.show', request()->route('id')) }}" class="list-group-item list-group-item-action py-2 ripple">
+            <a href="{{ route('back_end.form.show', request()->route('id')) }}" class="list-group-item list-group-item-action py-2 ripple {{request()->route()->getName() == 'back_end.form.show' ? 'active' : ''}}">
                 <i class="fas fa-chart-area fa-fw me-3"></i><span>Inbox</span>
             </a>
 
-            <a href="{{ route('back_end.form.edit', request()->route('id')) }}" class="list-group-item list-group-item-action py-2 ripple active">
+            <a href="{{ route('back_end.form.edit', request()->route('id')) }}" class="list-group-item list-group-item-action py-2 ripple {{request()->route()->getName() == 'back_end.form.edit' ? 'active' : ''}}">
                 <i class="fas fa-chart-area fa-fw me-3"></i><span>Configuration</span>
             </a>
         @endif

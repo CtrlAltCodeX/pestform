@@ -6,10 +6,6 @@
     position:relative;
 }
 
-.form-list {
-    height: 99vh;
-}
-
 .main-container {
     height: fit-content;
 }
@@ -20,6 +16,7 @@
 
 #page-content {
     width: 80%;
+    height: 99vh;
 }
 
 .endpoint {

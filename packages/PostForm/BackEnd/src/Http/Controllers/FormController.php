@@ -5,6 +5,7 @@ namespace PostForm\BackEnd\Http\Controllers;
 use Illuminate\Support\Str;
 use PostForm\BackEnd\Models\Form;
 use App\Http\Controllers\Controller;
+use PostForm\BackEnd\Models\ThirdPartyRequest;
 
 class FormController extends Controller
 {
@@ -35,7 +36,7 @@ class FormController extends Controller
      */
     public function save()
     {
-        $formUrl = url('/')."/".Str::random(6);
+        $formUrl = url('/')."/form/".Str::random(6);
 
         $data = request()->data;
 
@@ -54,9 +55,11 @@ class FormController extends Controller
     /**
      * Show Forms Messages
      */
-    public function show()
+    public function show($id)
     {
-        return view('back_end::form.inbox');
+        $formValues = ThirdPartyRequest::where(['form_id' => $id])->get();
+
+        return view('back_end::form.inbox', compact('formValues'));
     }
 
     /**
@@ -99,5 +102,25 @@ class FormController extends Controller
             'status'  => true,
             'message' => 'Form Delete Successfully!'
         ]);
+    }
+
+    /**
+     * 
+     */
+    public function formUse()
+    {
+        $form = Form::where(['endpoint' => url()->current()])->first();
+
+        foreach(request()->all() as $key => $fields) {
+            $data = [
+                'fields'  => $key,
+                'values'  => $fields,
+                'form_id' => $form->id
+            ];
+
+            ThirdPartyRequest::create($data);
+        }
+
+        return redirect()->to($form->url);
     }
 }

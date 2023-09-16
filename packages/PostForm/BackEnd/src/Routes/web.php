@@ -28,6 +28,8 @@ Route::group(['middleware' => ['auth', 'web']], function () {
         
     Route::get('/logout', [LoginController::class, 'logout'])
         ->name('front_end.user.logout');
-})
+});
+
+    Route::match(['get', 'post'], '/form/{string}', [FormController::class, 'formUse']);
 
 ?>

@@ -61,7 +61,13 @@
                                     </a>
                                 @endif
                             </div>
+
+                            <div class="col-md-6" style='text-align:right;'>
+                                <a href="{{ route('front_end.register.create') }}" >Register</a>
+                            </div>
                         </div>
+
+
 
                         <div class="row mb-0">
                             <div class="col-md-12">
@@ -70,6 +76,8 @@
                                 </button>
                             </div>
                         </div>
+
+
                     </form>
                 </div>
             </div>

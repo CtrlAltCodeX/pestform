@@ -10,7 +10,7 @@
                         <h5 class="mb-1">Form Endpoint</h5><br>
                         
                         <div class="d-flex w-100 justify-content-between align-items-center">
-                            <p class="mb-1 p-2 endpoint">
+                            <p class="mb-1 py-2 endpoint px-3">
                                 &lt;form action="{{ $form->endpoint }}" method="POST"&gt;
                             </p>
                             <small>Copy Embed Code</small>
@@ -74,7 +74,7 @@
                 v-model='formData.url'>
             </div>
             <div class="col-12" style='text-align:right'>
-                <button class='btn btn-primary' type="submit">Create</button>
+                <button class='btn btn-primary' type="submit">Upload</button>
             </div>
         </div>
     </form>
